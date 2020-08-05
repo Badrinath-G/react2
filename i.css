@@ -13,8 +13,10 @@ h1 {
 
 #mydiv {
     width: 40%;
-    margin:0em auto;
-    padding-top: 3em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .b1 {
