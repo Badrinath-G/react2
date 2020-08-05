@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RegistrationForm</title>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="i.css" />
+  <link rel="stylesheet" type="text/css" href="mqry.css" />
+</head>
+<body>
+  
+    <div id="mydiv"></div>
+
+    <script type="text/babel">
+      function Hello() {
+        return (
+          <div>
+          
+            <h1>Registration Form</h1>
+
+            <br />
+
+            <div class="form">
+
+            <div class="b1">
+            <label for="name" class="head">Name</label>
+            <div class="gap"></div>
+            <input type="text" placeholder="Your Name" class="i1"/>
+            <br />
+            </div>
+
+            <div class="b1">
+            <label for="cname" class="head">College Name</label>
+            <div class="gap"></div>
+            <input type="text" placeholder="Name of the College" class="i1"/>
+            <br/>
+            </div>
+
+            <div class="b1">
+            <label for="dept" class="head">Department</label>
+            <div class="gap"></div>
+            <input type="text" placeholder="Department" class="i1"/>
+            <br/>
+            </div>
+
+            <div class="b1">
+            <label for="gender" class="head">Gender</label>
+            <div class="gap"></div>
+            <div class="p1">
+            <input type="radio" name="gender"class="rb"/>
+            <label for="">Male</label>
+            <input type="radio" name="gender" class="rb"/>
+            <label for="">Female</label>
+            </div>
+            <br />
+            </div>
+
+            <div class="b1">
+            <label for="email" class="head">Email</label>
+            <div class="gap"></div>
+            <input type="text" placeholder="Email"class="i1"/>
+            <br />
+            </div>
+
+            <div class="b1">
+            <label for="mob" class="head">Mobile</label>
+            <div class="gap"></div>
+            <input type="text" placeholder="Mobile Number" class="i1"/>
+            <br/>
+            </div>
+
+            <br />
+
+            <div class="but"><button>Submit</button></div>
+
+            </div>
+            
+          </div>)
+      }
+
+      ReactDOM.render(<Hello />, document.getElementById('mydiv'))
+    </script>
+  </body>
+</html>

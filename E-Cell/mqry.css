@@ -1,0 +1,14 @@
+@media (max-width:900px) {
+    #mydiv {
+        padding-top: 4em;
+        width: 70%;
+    }
+}
+
+@media (max-width:600px) {
+    #mydiv {
+        padding-top: 4em;
+        width: 95%;
+    }
+}
+
