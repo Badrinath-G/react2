@@ -14,6 +14,56 @@
 
     <script type="text/babel">
       function Hello() {
+
+        const [person,setPerson] = React.useState({name:'',cname:'',dept:'',gender:'',email:'',mob:''});
+
+        const name = (e) => {
+          e.preventDefault();
+          setPerson({...person,name:e.target.value});
+        }
+
+        const clg = (e) => {
+          e.preventDefault();
+          setPerson({...person,cname:e.target.value});
+        }
+
+        const dpt = (e) => {
+          e.preventDefault();
+          setPerson({...person,dept:e.target.value});
+        }
+
+        const genchange = (e) => {
+          setPerson({...person,gender:e.target.value});
+        }
+
+        const mail = (e) => {
+          e.preventDefault();
+          setPerson({...person,email:e.target.value});
+        }
+
+        const ph = (e) => {
+          e.preventDefault();
+          setPerson({...person,mob:parseInt(e.target.value)});
+        }
+
+        const done = (e) => {
+
+          e.preventDefault();
+
+          let obj = person;
+
+          localStorage.setItem('studentdata',JSON.stringify(obj));
+
+          let data = localStorage.getItem('studentdata');
+
+          data = JSON.parse(data);
+
+          console.log(data);
+
+          setPerson({...person,name:'',cname:'',dept:'',gender:'',email:'',mob:''});
+
+        }        
+
         return (
           <div>
           
@@ -23,24 +73,29 @@
 
             <div class="form">
 
+            <form onSubmit={done} >
+
             <div class="b1">
             <label for="name" class="head">Name</label>
             <div class="gap"></div>
-            <input type="text" placeholder="Your Name" class="i1"/>
+            <input type="text" 
+            placeholder="Your Name"
+            value={person.name}   
+            onChange={name} class="i1"/>
             <br />
             </div>
 
             <div class="b1">
             <label for="cname" class="head">College Name</label>
             <div class="gap"></div>
-            <input type="text" placeholder="Name of the College" class="i1"/>
+            <input type="text" placeholder="Name of the College" value={person.cname} onChange={clg} class="i1"/>
             <br/>
             </div>
 
             <div class="b1">
             <label for="dept" class="head">Department</label>
             <div class="gap"></div>
-            <input type="text" placeholder="Department" class="i1"/>
+            <input type="text" placeholder="Department" value={person.dept} onChange={dpt} class="i1"/>
             <br/>
             </div>
 
@@ -48,9 +103,9 @@
             <label for="gender" class="head">Gender</label>
             <div class="gap"></div>
             <div class="p1">
-            <input type="radio" name="gender"class="rb"/>
+            <input type="radio" name="gender" checked={person.gender==='Male'} value="Male" onChange={genchange} class="rb"/>
             <label for="">Male</label>
-            <input type="radio" name="gender" class="rb"/>
+            <input type="radio" name="gender" checked={person.gender==='Female'} value="Female" onChange={genchange} class="rb"/>
             <label for="">Female</label>
             </div>
             <br />
@@ -59,20 +114,22 @@
             <div class="b1">
             <label for="email" class="head">Email</label>
             <div class="gap"></div>
-            <input type="text" placeholder="Email"class="i1"/>
+            <input type="text" placeholder="Email" value={person.email} onChange={mail} class="i1"/>
             <br />
             </div>
 
             <div class="b1">
             <label for="mob" class="head">Mobile</label>
             <div class="gap"></div>
-            <input type="text" placeholder="Mobile Number" class="i1"/>
+            <input type="text" placeholder="Mobile Number" value={person.mob} onChange={ph} class="i1"/>
             <br/>
             </div>
 
             <br />
 
-            <div class="but"><button>Submit</button></div>
+            <div class="but"><button type="Submit">Submit</button></div>
+
+            </form>
 
             </div>
             
